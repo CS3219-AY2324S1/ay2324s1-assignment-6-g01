@@ -1,1 +1,12 @@
-# your code here
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - getQuestions
+      - --region=asia-southeast1
+      - --source=.
+      - --trigger-http
+      - --runtime=nodejs18
+      - --allow-unauthenticated
