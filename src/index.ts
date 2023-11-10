@@ -23,6 +23,7 @@ export const getQuestions: HttpFunction = async (_, httpResponse) => {
 
 function convertQuestion(leetcodeQuestion: any) {
   return {
+    id: leetcodeQuestion.id,
     title: leetcodeQuestion.title,
     description: leetcodeQuestion.content,
     categories: leetcodeQuestion.topicTags.map((tag) => tag.name),
@@ -49,7 +50,7 @@ async function getLeetcodeQuestions(limit: number) {
           total: totalNum
           questions: data {
             complexity: difficulty
-            frontendQuestionId: questionFrontendId
+            id: questionFrontendId
             isFavor
             paidOnly: isPaidOnly
             title
