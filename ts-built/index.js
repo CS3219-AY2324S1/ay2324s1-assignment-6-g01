@@ -28,6 +28,7 @@ const getQuestions = (_, httpResponse) => __awaiter(void 0, void 0, void 0, func
 exports.getQuestions = getQuestions;
 function convertQuestion(leetcodeQuestion) {
     return {
+        id: leetcodeQuestion.id,
         title: leetcodeQuestion.title,
         description: leetcodeQuestion.content,
         categories: leetcodeQuestion.topicTags.map((tag) => tag.name),
@@ -54,7 +55,7 @@ function getLeetcodeQuestions(limit) {
           total: totalNum
           questions: data {
             complexity: difficulty
-            frontendQuestionId: questionFrontendId
+            id: questionFrontendId
             isFavor
             paidOnly: isPaidOnly
             title
